@@ -3,7 +3,7 @@ import ActionTable from './components/ActionTable';
 
 export default function () {
   return (
-    <div className="执行机列表-page">
+    <div className="pipeline-page">
       {/* action bar table */}
       <ActionTable />
     </div>

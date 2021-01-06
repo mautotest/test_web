@@ -3,7 +3,7 @@ import ActionTable from './components/ActionTable';
 
 export default function () {
   return (
-    <div className="环境信息-page">
+    <div className="jobs-page">
       {/* action bar table */}
       <ActionTable />
     </div>

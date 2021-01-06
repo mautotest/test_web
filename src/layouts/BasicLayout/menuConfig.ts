@@ -1,7 +1,6 @@
 const headerMenuConfig = [];
 
 const asideMenuConfig = [
-  { name: 'Dashboard', path: '/' },
   { path: '/pipeline', name: '流水线' },
   { path: '/jobs', name: '任务列表' },
   { path: '/env', name: '环境信息' },

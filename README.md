@@ -1,8 +1,3 @@
-
-## Fusion Design Lite - TS
-
-> 轻量级模板，使用 TypeScript，仅包含基础的 Layout。
-
 ## 使用
 
 ```bash
@@ -12,8 +7,6 @@ $ npm install
 # 启动服务
 $ npm start  # visit http://localhost:3333
 ```
-
-[More docs](https://ice.work/docs/guide/about).
 
 ## 目录
 

@@ -8,6 +8,7 @@
     "ahooks": "^2.0.0",
     "lodash.debounce": "^4.0.8",
     "moment": "^2.24.0",
+    "prop-types": "^15.5.8",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-sortablejs": "^5.0.0",

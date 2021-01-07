@@ -1,10 +1,12 @@
 const headerMenuConfig = [];
 
 const asideMenuConfig = [
-  { path: '/pipeline', name: '流水线' },
-  { path: '/jobs', name: '任务列表' },
-  { path: '/env', name: '环境信息' },
-  { path: '/runner', name: '执行机列表' },
+  { path: '/menu/pipeline', name: '流水线' },
+  { path: '/menu/jobs', name: '任务' },
+  { path: '/menu/env', name: '环境信息' },
+  { path: '/menu/runner', name: '执行机' },
+  { path: '/menu/plugin', name: '插件' },
+  { path: '/menu/settings', name: '设置' },
 ];
 
 export { headerMenuConfig, asideMenuConfig };

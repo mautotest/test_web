@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import LoginBlock from './components/LoginBlock';
 
 export default function () {

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Input, Message, Form, Divider, Checkbox, Icon } from '@alifd/next';
-
+import { Input, Message, Form, Checkbox } from '@alifd/next';
 import { useInterval } from './utils';
 import styles from './index.module.scss';
+import loginService from '../../services/loginservice';
+import {useRequest} from 'ice';
+
 
 const { Item } = Form;
 
@@ -61,13 +63,29 @@ const LoginBlock: React.FunctionComponent<LoginProps> = (
     checkRunning(true);
   };
 
+
+  const { request:getLogin } = useRequest(loginService.login);
+
   const handleSubmit = (values: IDataSource, errors: []) => {
     if (errors) {
       console.log('errors', errors);
       return;
     }
-    console.log('values:', values);
-    Message.success('登录成功');
+    // 调用 service
+    console.log('values', values);
+    getLogin({
+      "username":values.name,
+      "password":values.password
+    }).then(
+      res => {
+        if(res.code == 0){
+          Message.success('登录成功');
+          window.location.href="/menu"
+        }else{
+          Message.error('登录失败：'+ res.desc);
+        }
+      }
+    );
   };
 
   const phoneForm = (

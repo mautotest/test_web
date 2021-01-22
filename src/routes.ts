@@ -1,6 +1,5 @@
 import BasicLayout from '@/layouts/BasicLayout';
 import Basic from '@/layouts/Basic';
-import jobs from '@/pages/jobs';
 import pipeline from '@/pages/pipeline';
 import env from '@/pages/env';
 import runner from '@/pages/runner';
@@ -13,7 +12,6 @@ const routerConfig = [
     path: '/menu',
     component: BasicLayout,
     children: [
-      { path: '/jobs', exact: true, component: jobs },
       { path: '/pipeline', component: pipeline },
       { path: '/env', component: env },
       { path: '/runner', component: runner },

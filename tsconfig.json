@@ -28,6 +28,6 @@
       "ice": [".ice/index.ts"]
     }
   },
-  "include": ["src", ".ice"],
+  "include": ["src", ".ice", "mock"],
   "exclude": ["node_modules", "build", "public"]
 }

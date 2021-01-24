@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Input, Message, Form, Checkbox } from '@alifd/next';
 import { useInterval } from './utils';
 import styles from './index.module.scss';
-import loginService from '../../services/loginservice';
+import loginService from '@/pages/login/services/loginservice';
 import {useRequest} from 'ice';
+import store from '@/store';
 
 
 const { Item } = Form;
@@ -66,20 +67,24 @@ const LoginBlock: React.FunctionComponent<LoginProps> = (
 
   const { request:getLogin } = useRequest(loginService.login);
 
+  let [userStore,userActions] = store.useModel('user')
+  
   const handleSubmit = (values: IDataSource, errors: []) => {
+    
     if (errors) {
       console.log('errors', errors);
       return;
     }
     // 调用 service
-    console.log('values', values);
     getLogin({
       "username":values.name,
-      "password":values.password
+      "password":values.password,
+      "headers":{"Session":userStore.Session}
     }).then(
       res => {
         if(res.code == 0){
           Message.success('登录成功');
+          userActions.updateSession(res.result.session)
           window.location.href="/menu"
         }else{
           Message.error('登录失败：'+ res.desc);
